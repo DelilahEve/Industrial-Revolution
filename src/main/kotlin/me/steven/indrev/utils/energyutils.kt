@@ -15,7 +15,8 @@ import java.util.function.LongFunction
 fun energyOf(world: ServerWorld, blockPos: BlockPos, direction: Direction): EnergyStorage? {
     return world.energyIoCache.computeIfAbsent(
         blockPos.asLong(),
-        LongFunction { BlockApiCache.create(EnergyStorage.SIDED, world, blockPos) }).find(direction)
+        LongFunction { BlockApiCache.create(EnergyStorage.SIDED, world, blockPos) }
+    ).find(direction)
 }
 
 fun energyOf(itemStack: ItemStack?): EnergyStorage? {

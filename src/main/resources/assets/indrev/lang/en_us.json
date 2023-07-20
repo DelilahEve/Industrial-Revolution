@@ -277,6 +277,7 @@
   "item.indrev.iron_purified_ore": "Purified Iron Ore",
   "item.indrev.diamond_dust": "Diamond Dust",
   "item.indrev.coal_dust": "Coal Dust",
+  "block.indrev.pump": "Pump",
   "block.indrev.pump_mk1": "Pump",
   "item.indrev.empty_enhancer": "Empty Enhancer",
   "item.indrev.buffer_enhancer": "Buffer Enhancer",
@@ -787,7 +788,6 @@
   "item.indrev.carbon_fiber_chest_frame": "Carbon Fiber Helmet Frame",
   "item.indrev.carbon_fiber_legs_frame": "Carbon Fiber Leggings Frame",
   "item.indrev.carbon_fiber_boots_frame": "Carbon Fiber Boots Frame",
-  "subtitles.indrev.laser": "Laser beam",
   "block.indrev.boiler": "Boiler",
   "block.indrev.steam_turbine_mk4": "Steam Turbine"
 }

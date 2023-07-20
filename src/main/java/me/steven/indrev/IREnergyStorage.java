@@ -74,17 +74,15 @@ public abstract class IREnergyStorage extends SnapshotParticipant<Long> {
 
         @Override
         public long insert(long maxAmount, TransactionContext transaction) {
-            StoragePreconditions.notNegative(maxAmount);
-
-            long inserted = Math.min(getMaxInsert(side), Math.min(maxAmount, getCapacity() - getAmount()));
-
-            if (inserted > 0) {
-                updateSnapshots(transaction);
-
-                setAmount(getAmount() + inserted);
-                return inserted;
-            }
-
+            try {
+                StoragePreconditions.notNegative(maxAmount);
+                long inserted = Math.min(getMaxInsert(side), Math.min(maxAmount, getCapacity() - getAmount()));
+                if (inserted > 0) {
+                    updateSnapshots(transaction);
+                    setAmount(getAmount() + inserted);
+                    return inserted;
+                }
+            } catch (Exception ignored) { }
             return 0;
         }
 
@@ -95,16 +93,15 @@ public abstract class IREnergyStorage extends SnapshotParticipant<Long> {
 
         @Override
         public long extract(long maxAmount, TransactionContext transaction) {
-            StoragePreconditions.notNegative(maxAmount);
-
-            long extracted = Math.min(getMaxExtract(side), Math.min(maxAmount, getAmount()));
-
-            if (extracted > 0) {
-                updateSnapshots(transaction);
-                setAmount(getAmount() - extracted);
-                return extracted;
-            }
-
+            try {
+                StoragePreconditions.notNegative(maxAmount);
+                long extracted = Math.min(getMaxExtract(side), Math.min(maxAmount, getAmount()));
+                if (extracted > 0) {
+                    updateSnapshots(transaction);
+                    setAmount(getAmount() - extracted);
+                    return extracted;
+                }
+            } catch (Exception ignored) { }
             return 0;
         }
 

@@ -27,7 +27,7 @@ class DataCardWriterBlockEntity (tier: Tier, pos: BlockPos, state: BlockState)
     }
 
     var processTime by autosync(PROCESS_ID, 0)
-    var totalProcessTime by autosync(TOTAL_PROCESS_ID, 0)
+    private var totalProcessTime by autosync(TOTAL_PROCESS_ID, 0)
 
     private val modifiersToAdd = mutableMapOf<OreDataCards.Modifier, Int>()
     private val toWrite = mutableListOf<ItemStack>()

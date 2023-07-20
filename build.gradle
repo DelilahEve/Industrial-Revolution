@@ -80,19 +80,19 @@ repositories {
     }
     maven {
         name = "Cafeteria Development"
-        url = 'https://maven.cafeteria.dev'
+        url = "https://maven.cafeteria.dev/releases"
         content {
-            includeGroup 'dev.cafeteria'
-            includeGroup 'me.luligabi'
-            includeGroup 'net.adriantodt.fabricmc'
+            includeGroup "dev.cafeteria"
+            includeGroup "me.luligabi"
+            includeGroup "net.adriantodt.fabricmc"
         }
     }
     maven {
-        name = 'Ladysnake Mods'
-        url = 'https://ladysnake.jfrog.io/artifactory/mods'
+        name = "Ladysnake Mods"
+        url = "https://maven.ladysnake.org/releases"
         content {
-            includeGroup 'io.github.ladysnake'
-            includeGroupByRegex 'io\\.github\\.onyxstudios.*'
+            includeGroup "io.github.ladysnake"
+            includeGroupByRegex "io\\.github\\.onyxstudios.*"
         }
     }
 }
@@ -131,7 +131,7 @@ dependencies {
     dependencies.ext.lib("com.github.Draylar:magna:${project.magna_version}")
     dependencies.ext.lib("com.github.emilyploszaj:step-height-entity-attribute:v1.0.1")
     dependencies.ext.lib("dev.cafeteria:fake-player-api:${project.fakeplayerapi_version}")
-    dependencies.ext.lib("me.luligabi:NoIndium:1.0")
+    dependencies.ext.lib("me.luligabi:NoIndium:1.0.2+1.18.2")
     dependencies.ext.lib("me.shedaniel:RoughlyEnoughItems-fabric:${project.rei_version}", true)
 
     modRuntimeOnly("com.terraformersmc:modmenu:${project.modmenu_version}") {
@@ -196,16 +196,16 @@ publishing {
 
     // select the repositories you want to publish to
     repositories {
-        maven {
-            url "https://maven.cafeteria.dev/releases"
-            credentials {
-                username = project.property("mcdUsername")
-                password = project.property("mcdPassword")
-            }
-            authentication {
-                basic(BasicAuthentication)
-            }
-        }
+//        maven {
+//            url "https://maven.cafeteria.dev/releases"
+//            credentials {
+//                username = project.property("mcdUsername")
+//                password = project.property("mcdPassword")
+//            }
+//            authentication {
+//                basic(BasicAuthentication)
+//            }
+//        }
     }
 }
 
